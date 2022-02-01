@@ -3,18 +3,6 @@ import argparse
 
 def args_parser():
     parser = argparse.ArgumentParser()
-    """
-    baselines:
-    MNIST with MLP/cnn2:
-    - centralized lr=0.01 epoches=3
-    - federated lr=0.1 epoches=10
-    - JpPEQ lr=0.1 epoches=10 dyn_range=0.01
-    
-    CIFAR-10 with cnn3 
-    - centralized lr=0.01 epoches=10 acc=82
-    - federated lr=0.1 epoches=30 acc=75
-    - JoPEQ lr=0.1 epoches=150 acc=73
-    """
 
     parser.add_argument('--exp_name', type=str, default='exp',
                         help="the name of the current experiment")
@@ -64,6 +52,9 @@ def args_parser():
     parser.add_argument('--quantizer_type', type=str, default='mid-tread',
                         choices=['mid-riser', 'mid-tread'],
                         help="whether to choose mid-riser or mid-tread quantizer")
+    parser.add_argument('--gamma', type=float,
+                        default=2 * parser.parse_args().R + (1 / parser.parse_args().epsilon),
+                        help="quantizer dynamic range")
 
     # privacy arguments
     parser.add_argument('--privacy', action='store_true', default=True,
@@ -89,10 +80,6 @@ def args_parser():
                         help="device to use (gpu or cpu)")
     parser.add_argument('--seed', type=float, default=1234,
                         help="manual seed for reproducibility")
-
-    parser.add_argument('--gamma', type=float,
-                        default=2 * parser.parse_args().R + (1 / parser.parse_args().epsilon),
-                        help="quantizer dynamic range")
 
     args = parser.parse_args()
     return args

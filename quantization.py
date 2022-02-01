@@ -2,7 +2,7 @@ import torch
 import numpy as np
 
 
-class lattice_quantization:
+class LatticeQuantization:
     def __init__(self, args):
         self.lattice_dim = args.lattice_dim
         self.dither = args.dither
@@ -28,15 +28,6 @@ class lattice_quantization:
 
         # encoder
         input_vec = input_vec.view(self.lattice_dim, -1)  # divide input into blocks
-
-        # hexagonal lattice
-        # lattice = torch.zeros((lattice_dim, int((2*max_dim+1)**lattice_dim))).to(input.dtype).to(input.device)
-        # idx = 0
-        # for kk in np.arange(start=-max_dim, stop=max_dim):
-        #     for ll in np.arange(start=-max_dim, stop=max_dim):
-        #         lattice[:, idx] = torch.tensor([kk, ll]).T
-        #         idx += 1
-
         dither = torch.zeros_like(input_vec, dtype=input.dtype)
         if self.dither:
             dither = torch.matmul(self.gen_mat, 0.5 * (dither.uniform_() - 0.5))  # generate dither
@@ -53,7 +44,7 @@ class lattice_quantization:
         return output
 
 
-class scalar_quantization:
+class ScalarQuantization:
     def __init__(self, args):
         self.dither = args.dither
         self.subtract_dither = args.subtract_dither
