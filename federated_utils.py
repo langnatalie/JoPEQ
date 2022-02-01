@@ -58,7 +58,7 @@ class JoPEQ:  # Privacy Quantization class
                 self.quantizer = ScalarQuantization(args)
         else:
             self.quantizer = None
-        if args.Privacy:
+        if args.privacy:
             self.privacy = Privacy(args)
         else:
             self.privacy = None

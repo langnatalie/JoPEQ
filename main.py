@@ -44,7 +44,7 @@ if __name__ == '__main__':
     #  inference
     if args.eval:
         global_model.load_state_dict(torch.load(path_best_model))
-        test_acc = utils.test(test_loader, global_model, args.device)
+        test_acc = utils.test(test_loader, global_model, test_creterion, args.device)
         textio.cprint(f'eval test_acc: {test_acc:.0f}%')
         gc.collect()
         sys.exit()

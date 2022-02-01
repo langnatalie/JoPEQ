@@ -34,11 +34,11 @@ def args_parser():
                         help="number of local epochs")
     parser.add_argument('--local_iterations', type=int, default=1,
                         help="number of local iterations instead of local epoch")
-    parser.add_argument('--global_epochs', type=int, default=95,
+    parser.add_argument('--global_epochs', type=int, default=100,
                         help="number of global epochs")
 
     # quantization arguments
-    parser.add_argument('--quantization', action='store_true', default=True,
+    parser.add_argument('--quantization', action='store_true',
                         help="whether to perform quantization")
     parser.add_argument('--lattice_dim', type=int, default=1,
                         choices=[1, 2],
@@ -52,18 +52,18 @@ def args_parser():
     parser.add_argument('--quantizer_type', type=str, default='mid-tread',
                         choices=['mid-riser', 'mid-tread'],
                         help="whether to choose mid-riser or mid-tread quantizer")
-    parser.add_argument('--gamma', type=float,
-                        default=2 * parser.parse_args().R + (1 / parser.parse_args().epsilon),
-                        help="quantizer dynamic range")
 
     # privacy arguments
-    parser.add_argument('--privacy', action='store_true', default=True,
+    parser.add_argument('--privacy', action='store_true',
                         help="whether to preserve privacy")
-    parser.add_argument('--epsilon', type=float, default=3.5,
+    parser.add_argument('--epsilon', type=float, default=4,
                         help="privacy budget (epsilon)")
     parser.add_argument('--privacy_noise', type=str, default='PPN',
                         choices=['laplace', 'PPN'],
                         help="add the signal privacy preserving noise of type laplace or PPN")
+    parser.add_argument('--gamma', type=float,
+                        default=2 * parser.parse_args().R + (1 / parser.parse_args().epsilon),
+                        help="quantizer dynamic range")
 
     # learning arguments
     parser.add_argument('--optimizer', type=str, default='sgd',
