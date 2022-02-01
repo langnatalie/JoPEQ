@@ -102,8 +102,7 @@ if __name__ == '__main__':
 
             test_acc = utils.test(test_loader, global_model, test_creterion, args.device)
             textio.cprint(f'epoch: {global_epoch} | train_loss: {train_loss:.2f} | '
-                          f'val_acc: {val_acc:.0f}% | test_acc: {test_acc:.0f}% | '
-                          f'SNR: {20 * torch.log10(SNR):.3f}')
+                          f'val_acc: {val_acc:.0f}% | SNR: {20 * torch.log10(SNR):.3f}')
 
         textio.cprint(f'avg SNR: {20 * torch.log10(sum(SNR_list) / len(SNR_list)):.3f}')
 
