@@ -4,7 +4,7 @@
 ![image](https://user-images.githubusercontent.com/55830582/151803310-6bf83637-f606-4e28-a8ab-802985a8c879.png)
 
 ## Introduction
-In this work we propose a method for joint privacy enhancement and quantization (JoPEQ), unifying lossy compression and privacy enhancement for FL. This repository contains a basic PyTorch implementation of JoPEQ. Please refer to our [paper](https://drive.google.com/file/d/1AhirvDbA-43B0XKVa9RTpzVbhsxO5anW/view?usp=sharing) for more details.
+In this work we propose a method for joint privacy enhancement and quantization (JoPEQ), unifying lossy compression and privacy enhancement for federated learning. This repository contains a basic PyTorch implementation of JoPEQ. Please refer to our [paper](https://drive.google.com/file/d/1AhirvDbA-43B0XKVa9RTpzVbhsxO5anW/view?usp=sharing) for more details.
 
 ## Usage
 This code has been tested on Python 3.7.3, PyTorch 1.8.0 and CUDA 11.1.
