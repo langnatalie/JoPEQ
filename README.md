@@ -1,4 +1,4 @@
-# JoPEQ: Joint Privacy Enhancement and Quantization in Federated Learning
+# Joint Privacy Enhancement and Quantization in Federated Learning
 <!--Created by Natalie Lang and Nir Shlezinger from Ben-Gurion University.-->
 
 ![image](https://user-images.githubusercontent.com/55830582/151803310-6bf83637-f606-4e28-a8ab-802985a8c879.png)
