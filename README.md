@@ -1,7 +1,7 @@
 # Joint Privacy Enhancement and Quantization in Federated Learning
 <!--Created by Natalie Lang and Nir Shlezinger from Ben-Gurion University.-->
 
-![Uploading JoPEQ.png…]()
+![JoPEQ](https://user-images.githubusercontent.com/55830582/200579772-f0944091-66d1-44fd-81b0-95e311fdd71f.png)
 
 ## Introduction
 In this work we propose a method for joint privacy enhancement and quantization (JoPEQ), unifying lossy compression and privacy enhancement for federated learning. This repository contains a basic PyTorch implementation of JoPEQ. Please refer to our [paper](https://arxiv.org/abs/2208.10888) for more details.
