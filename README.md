@@ -1,10 +1,11 @@
 # Joint Privacy Enhancement and Quantization in Federated Learning
 <!--Created by Natalie Lang and Nir Shlezinger from Ben-Gurion University.-->
 
-![image](https://user-images.githubusercontent.com/55830582/151803310-6bf83637-f606-4e28-a8ab-802985a8c879.png)
+![jopeq_diagram_block_updates (1)_page-0001](https://user-images.githubusercontent.com/55830582/200574727-e5e78abe-2c4b-466d-8419-ef9944694954.jpg)
+
 
 ## Introduction
-In this work we propose a method for joint privacy enhancement and quantization (JoPEQ), unifying lossy compression and privacy enhancement for federated learning. This repository contains a basic PyTorch implementation of JoPEQ. Please refer to our [paper](https://drive.google.com/file/d/1AhirvDbA-43B0XKVa9RTpzVbhsxO5anW/view?usp=sharing) for more details.
+In this work we propose a method for joint privacy enhancement and quantization (JoPEQ), unifying lossy compression and privacy enhancement for federated learning. This repository contains a basic PyTorch implementation of JoPEQ. Please refer to our [paper](https://arxiv.org/abs/2208.10888) for more details.
 
 ## Usage
 This code has been tested on Python 3.7.3, PyTorch 1.8.0 and CUDA 11.1.
@@ -19,7 +20,7 @@ This code has been tested on Python 3.7.3, PyTorch 1.8.0 and CUDA 11.1.
 
 ### Training
 ```
-python main.py --exp_name=jopeq --quntization --R 1 --privacy --epsilon 4 --privacy_noise PPN
+python main.py --exp_name=jopeq --quntization --lattice_dim 2 --R 1 --privacy --privacy_noise jopeq_vector --epsilon 4 --sigma_squared 0.2 --nu 4
 ```
 
 ### Testing
