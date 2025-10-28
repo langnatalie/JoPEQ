@@ -1,0 +1,3 @@
+[submodule "external/JoPEQ-DLG"]
+	path = external/JoPEQ-DLG
+	url = https://github.com/eladgsofer/JoPEQ-DLG.git
